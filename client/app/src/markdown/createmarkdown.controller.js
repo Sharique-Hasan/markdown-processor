@@ -19,7 +19,6 @@
 
     vm.create = (markdown) => {
       markdown.markdown = processMarkDown(markdown.markdown);
-      debugger;
       Restangular.all('markdown/save')
         .post(markdown)
         .then((response) => {

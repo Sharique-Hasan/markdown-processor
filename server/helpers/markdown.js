@@ -26,8 +26,9 @@ function processPayload(payload){
 }
 
 function alternateH1(payload){
+
   let regex = /(\n*)(.*)(\n)(={3})(\n*)/gm;
-  payload = payload.replace(regex, '<h1 style="border-bottom: 1px solid #eee">$2</h1>');
+  payload = payload.replace(regex, '<h1 style="border-bottom: 1px solid #eee">$2</h1>\n');
   return Promise.resolve(payload);
 }
 
@@ -38,7 +39,7 @@ function alternateH2(payload){
 }
 
 function convertH6(payload) {
-  let regex = /(#{6})(.*)/g;
+  let regex = /#{6}(.*)/g;
   payload = payload.replace(regex, '<h6>$1</h6>');
   return Promise.resolve(payload);
 }
