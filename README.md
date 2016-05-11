@@ -110,5 +110,44 @@ Run Tests
     $ npm test
 ```
 
-Access the [Markdown Application](http://localhost:5000) at:
+Access the [Markdown Application](http://localhost:5000).
+
+Api Endpoints:
+---
+
+#### Markdown
+
+**GET** */api/v1/markdown/get* - Get All markdowns created
+
+**GET** */api/v1/markdown/get/{id}* - Get markdown by id
+
+**POST** */api/v1/markdown/save* - Create Markdown
+
+#### Api usage
+
+###### Request
+
+**POST** */api/v1/markdown/save*
+
+```
+    {
+        "title": "Sample Markdown",
+        "markdown": "[I am google](https://www.google.com.pk, 'I am google')"
+    }
+```
+
+###### Response
+
+```
+    {
+      "__v": 0,
+      "updatedAt": "2016-05-11T07:25:51.104Z",
+      "createdAt": "2016-05-11T07:25:51.104Z",
+      "rawMarkDown": "[I am google](https://www.google.com.pk, 'I am google')",
+      "processedHtml": "<a href=\"https://www.google.com.pk,\" title='I am google'>I am google</a>",
+      "title": "Some",
+      "_id": "5732de7f078fd1f61b397bdc"
+    }
+```
+
 
