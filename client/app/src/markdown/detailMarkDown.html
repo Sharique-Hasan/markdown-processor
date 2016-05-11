@@ -1,0 +1,12 @@
+<div> Detail view of <strong>{{vm.markdown.title}}</strong></div>
+<div class="pull-right">
+  <a ui-sref="Markdown.list" class="btn btn-primary">Markdown List</a>
+</div>
+<div class="col-sm-12">
+  <div class="col-sm-6">
+    <textarea name="" readonly  cols="70" rows="25">{{vm.markdown.rawMarkDown}}</textarea>
+  </div>
+  <div class="col-sm-6">
+    <div ng-bind-html="vm.markdown.processedHtml"></div>
+  </div>
+</div>

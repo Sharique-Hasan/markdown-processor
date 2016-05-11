@@ -1,0 +1,19 @@
+<div>
+  <div class="col-sm-10"> Create Markdown using Github's Markdown syntax</div>
+  <a ui-sref="Markdown.list" class="col-sm-2 btn btn-primary pull-left">Markdown List</a>
+</div>
+<br/><br/>
+<div>
+  <form name="vm.createForm" ng-submit="vm.createForm.$valid && vm.create(vm.markdown)">
+
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Enter the title for Markdown" required ng-model="vm.markdown.title"/>
+    </div>
+    <div class="form-group">
+      <textarea name="markdown" id="createTextArea" placeholder="Enter the Markdown" class="form-control" required cols="160" rows="20" ng-model="vm.markdown.markdown"></textarea>
+    </div>
+
+    <button class="btn btn-success pull-right" ng-disabled="vm.createForm.$invalid" type="submit">Create Markdown</button>
+  </form>
+
+</div>

@@ -1,0 +1,22 @@
+<div> Following is the list of already created and processed Markdowns </div>
+<div class="pull-right">
+  <a ui-sref="Markdown.create" class="btn btn-primary">
+    Create Markdown
+  </a>
+</div>
+<div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Created At</th>
+      <th>Title</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in vm.list">
+      <td>{{item.createdAt | date: 'dd-MM-yyyy hh:mm:ss'}}</td>
+      <td><a ui-sref="Markdown.detail({id: item._id})">{{item.title}}</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
